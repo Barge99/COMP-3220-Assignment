@@ -1,3 +1,4 @@
+package jfx_maven_project;
 public class Patient {
 private String id;
 private String name;

@@ -1,3 +1,4 @@
+package jfx_maven_project;
 public class Doctor {
 private String doctorID;
 private String name;
