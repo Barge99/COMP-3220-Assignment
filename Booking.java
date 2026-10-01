@@ -1,7 +1,7 @@
 public class Booking {
 private int check = 0;
 
-private Doctor[] doctors = new Doctor[3];
+public Doctor[] doctors = new Doctor[3];
 
 public void makeDocs() {
     Doctor doc1 = new Doctor("100A", "James John");
@@ -33,6 +33,7 @@ public void booktime(int timeindex, Appointment name, Doctor doc) {
     if(doc.timeslots[timeindex] == null) {
         doc.timeslots[timeindex] = name;
         check++;
+        System.out.println("Succesfully Booked.");
     } else {
         System.out.println("That time is unavailable./nPlease select another time./n");
     }

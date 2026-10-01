@@ -1,0 +1,43 @@
+Report, Due Friday 11:59 pm.
+
+Write a report that documents and justifies your design. The report must use the vocabulary of the clinic domain, not generic technical vocabulary. Each design decision must be grounded in the problem.
+Report format
+
+The report contains four mandatory sections, in this order:
+
+1. Scope statement
+
+Which part of the domain your team chose to implement, and which parts were left out.
+
+2. Class structure
+
+Every class defined, with its attributes (name and type) and methods (signature and one-line description). For each class: a 2-to-3-sentence justification explaining why the class exists, what it is responsible for, and why it holds those particular attributes.
+ℹ️ Example
+
+Class: Patient
+Attributes: id: int, name: String, phone: String
+Methods: getAppointments(): List<Appointment> — returns the patient's upcoming appointments
+Justification: "The Patient class represents a registered individual who can hold appointments at the clinic. It carries a unique ID, a name, and a phone number because these are the attributes a receptionist needs to identify a patient and contact them if a booking changes."
+
+3. Interaction narrative
+
+A plain-language walkthrough of one concrete scenario, describing how your classes interact step by step.
+ℹ️ Example
+
+"When the receptionist books an appointment, the Receptionist object calls BookingService.book() with a Patient and a Doctor. BookingService checks that the slot is available in the doctor's schedule, creates an Appointment object, and adds it to Doctor.appointments. The UI refreshes by calling Doctor.getAppointments()."
+
+4. AI usage log (if applicable)
+
+Which parts were AI-assisted, which tool was used, and your explanation of what the AI produced and why you accepted it.
+
+-----------------------------------------------------------------------------------------------------------
+
+We'll formulate the report here maybe?
+
+Christopher: AI Usage none, the Scope is: (Just rough thoughts)
+
+A main program with basic terminal UI to call 4 classes (Booking, Doctor, Patient, Appointment) and allows the user to Input their Health Card Number, Name, and Patient ID and theoretically book an appointment or check their appointments, but its still very rough around the edges. 
+And one branch with a template in JavaFX built in Maven not doing anything yet. 
+
+
+
