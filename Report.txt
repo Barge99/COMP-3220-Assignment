@@ -11,13 +11,69 @@ Which part of the domain your team chose to implement, and which parts were left
 
 2. Class structure
 
-Every class defined, with its attributes (name and type) and methods (signature and one-line description). For each class: a 2-to-3-sentence justification explaining why the class exists, what it is responsible for, and why it holds those particular attributes.
-ℹ️ Example
-
 Class: Patient
-Attributes: id: int, name: String, phone: String
-Methods: getAppointments(): List<Appointment> — returns the patient's upcoming appointments
-Justification: "The Patient class represents a registered individual who can hold appointments at the clinic. It carries a unique ID, a name, and a phone number because these are the attributes a receptionist needs to identify a patient and contact them if a booking changes."
+Attributes: id: String , name: String, number: String
+
+Methods: 
+getId() - Returns the value of the patient id
+getName() - Returns the value of the patient name
+getNum() - Returns the value of the patient number
+
+Justification:
+The patient themselves need to be modelled in the program.
+The Patient class stores all of the information related to each unique patient including name, id, and number.
+
+Class: Appointment
+Attributes: doctorID: String, patientID: String, healthcardNum: String, time: integer
+
+Methods: 
+getdoctorID() - Returns the value of the appointments doctors id
+getappointmentID() - Returns the value of the appointment id
+gethealthcardNum() - Returns the vlaue of the appointments health card number
+gettime() - Returns the appointment time
+
+Justification:
+The Appointment class models the appointments themselves by storing and associating the
+patient healthcardNum, doctors doctorID, the appointments appointmentID and the time of the appointment. 
+
+Class: Doctor
+Attributes: doctorID: String, name: String, timeslots: Appointment[]
+
+Methods:
+getdoctorID() - Returns the value of the doctors id
+getname() - Returns the value of the doctors name
+displayschedule() - Displays the status of the doctors 30 min schedule slots
+
+Justification:
+The doctors each have their own unique variable values so they must each be their own objects.
+Since each doctor has their own schedule each doctor object contians their array to store their appointments.
+
+Class: Booking
+Attributes:check: int, doctors: Doctor[]
+
+Methods:
+makeDocs() - Creates a few pre determined doctor objects for testing
+WelcomeMSG() - Displays a welcome message as well as options to continue
+appointmentnew(Doctor doc, Patient pat, String appid, String time) - 
+patientnew(String id, String name, String number) - Creates a new patient object
+chooseDoc() - Displays the list of available doctors as options to choose
+booktime(int timeindex, Appointment name, Doctor doc) - Books appointment at determined time if available
+checkapps(Doctor doc,Patient pat) - Displays appointments associated with healthcard number of patient
+
+Justification:
+The booking class is essentially the receptionist. There needs to be a class with all of the tools needed for
+the user to interact with the system. This class allows the user to create their patient profile,
+appointment, and check their existing appointments.
+
+Class: Main
+Attributes: counter: integer, patients: Patient[], appointments: Appointment[]
+
+Methods:
+main(String[] args) - Launches the clinic system program
+
+Justification: 
+This class applies the classes built to model all of the entities in a working clinic system and ties 
+together all of the logic by utilizing all of the methods available.
 
 3. Interaction narrative
 
