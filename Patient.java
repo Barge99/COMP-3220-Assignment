@@ -2,13 +2,11 @@ public class Patient {
 private String id;
 private String name;
 private String number;
-private String healthcardNum;
 
-public Patient(String id, String name, String number, String healthcardNum) {
+public Patient(String id, String name, String number) {
     this.id = id;
     this.name = name;
     this.number = number;
-    this.healthcardNum = healthcardNum;
 }
 
 public String getId() {
@@ -21,10 +19,6 @@ public String getName() {
 
 public String getNum() {
     return number;
-}
-
-public String gethealthcardNum() {
-    return healthcardNum;
 }
 
 }
