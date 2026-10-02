@@ -76,6 +76,37 @@ This class applies the classes built to model all of the entities in a working c
 together all of the logic by utilizing all of the methods available.
 
 3. Interaction narrative
+////
+
+Scenario: a new patient books an appointment with a doctor and then checks their upcoming appointments.
+
+    1. Starting the clinic system. When the clinic opens the program, Main.main() runs. It creates the Booking object, which acts as the receptionist, 
+    and calls makeDocs(). This fills the doctors array with the clinic's doctors, each as a Doctor object with its own doctorID, name and an empty timeslots 
+    array of 30-minute slots. Main then calls WelcomeMSG(), which greets the patient and offers the choice to book a new appointment or check an existing one.
+
+    2. Registering the patient. The patient chooses to book. Booking.patientnew(id, name, number) takes the details the patient types in and creates a Patient object. 
+    Main stores it in its patients array, so the clinic has a record of who has come in.
+
+    3. Choosing a doctor. Booking.chooseDoc() lists the doctors from the doctors array, and the patient picks one. Doctor.displayschedule() then shows the status of 
+    that doctor's 30-minute slots, so the patient can see which times are open and which are already taken.
+
+    4. Creating the appointment. The patient picks a free time. Booking.appointmentnew(doc, pat, appid, time) creates an Appointment object that links the doctor's doctorID, 
+    the patient's health card number and the chosen time. Main adds it to its appointments array.
+
+    5. Booking the slot. Booking.booktime(timeindex, appointment, doc) checks the chosen index in that doctor's timeslots array. If the slot is free, it stores 
+    the Appointment there, so the doctor's schedule now shows that time as taken and no other patient can book it. If the slot is already taken, nothing is stored and 
+    the patient is asked to choose another time.
+
+    5. Checking an existing appointment. Later, the patient returns and chooses to check their appointments. Booking.checkapps(doc, pat) goes through the doctor's timeslots, 
+    finds the appointments whose health card number matches the patient's, and displays them. It reads the details through Appointment.getdoctorID() and Appointment.gettime(), 
+    and the patient through Patient.getName().
+
+Checking an existing appointment. Later, the patient returns and chooses to check their appointments. Booking.checkapps(doc, pat) goes through the doctor's timeslots, 
+finds the appointments whose health card number matches the patient's, and displays them. It reads the details through Appointment.getdoctorID() and Appointment.gettime(), 
+and the patient through Patient.getName().
+
+////
+
 
 A plain-language walkthrough of one concrete scenario, describing how your classes interact step by step.
 ℹ️ Example
