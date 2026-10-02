@@ -9,6 +9,12 @@ The report contains four mandatory sections, in this order:
 
 Which part of the domain your team chose to implement, and which parts were left out.
 
+To start, a basic class system and main file was implemented to start simulating how the UI will work for the clinic's patients trying to either book an appointment or check their existing ones, with some basic information the patient can input. This is currently being simulated in the console until we finish a UI framework. The doctor side of this has been left-out for the initial prototypes. This will help as we begin formulating the rest of the project, as the core of the project is appointment management, so we're starting at the core of it and then trying to branch out from there. 
+
+We have also begun to use some interaction between different files, through our files interacting with each other, currently we're loading test variables from the files themselves, but this connection will be good for when we get a database system working, for actual variable storage and data reading, which will be important for actually storing patient's appointments, doctor's info, names, availabilities, and much more.
+
+For the user interface, a separate branch with a JavaFX Maven build has been established for testing purposes, but no actual development there as its on a base template. This will be important as eventually we'll need a JavaFX framework, so we can display an actual user interface with enterable fields, as for a lot of patients a good UI will be far easier to navigate and more familiar then a console line app. The clinic will be serving a wide variety of people, so it's good to make a custom more streamlined design so both the doctors and the patients to have something easy to use. 
+
 2. Class structure
 
 Class: Patient
@@ -84,16 +90,10 @@ A plain-language walkthrough of one concrete scenario, describing how your class
 
 4. AI usage log (if applicable)
 
-Which parts were AI-assisted, which tool was used, and your explanation of what the AI produced and why you accepted it.
+N/A
 
 -----------------------------------------------------------------------------------------------------------
 
-We'll formulate the report here maybe?
-
-Christopher: AI Usage none, the Scope is: (Just rough thoughts)
-
-A main program with basic terminal UI to call 4 classes (Booking, Doctor, Patient, Appointment) and allows the user to Input their Health Card Number, Name, and Patient ID and theoretically book an appointment or check their appointments, but its still very rough around the edges. 
-And one branch with a template in JavaFX built in Maven not doing anything yet. 
 
 
 
